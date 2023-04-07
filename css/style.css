@@ -1,0 +1,21 @@
+.vowelsChart-single img {
+    cursor: pointer;
+}
+
+p {
+    color: white;
+}
+
+.vowelsChart {
+    display: flex;
+    gap: 1rem;
+}
+.vowelsChart-single {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.vowelsChart-single-content {
+    display: flex;
+    gap: 1rem;
+}
