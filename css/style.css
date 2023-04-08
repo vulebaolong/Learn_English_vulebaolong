@@ -1,5 +1,6 @@
-.vowelsChart-single img {
+.phonemeChart img {
     cursor: pointer;
+    width: 100%;
 }
 
 p {
@@ -10,13 +11,46 @@ p {
     display: flex;
     gap: 1rem;
 }
-.vowelsChart-single {
+
+.vowelsChart-content {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.vowelsChart-header {
+    flex-basis: 30%;
+    align-self: stretch;
+    padding-bottom: 0.5rem;
+}
+
+.vowelsChart-header > img {
+    height: 100%;
+}
+
+.vowelsChart-single-header,
+.vowelsChart-double-header {
+    padding: 0 0.5rem;
+}
+
+/* VOWELS CHART SINGLE */
+.vowelsChart-single,
+.vowelsChart-double {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    flex-basis: 50%;
 }
-.vowelsChart-single-content {
+
+.vowelsChart-single-content,
+.vowelsChart-double-content {
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
 }
+
+.vowelsChart-single-content > div,
+.vowelsChart-double-content > div {
+    flex-basis: 33.3333333333%;
+    padding: 0.5rem;
+}
+
+/* VOWELS CHART DOUBLE */
