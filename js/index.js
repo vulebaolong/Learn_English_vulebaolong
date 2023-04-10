@@ -12,3 +12,19 @@ phonemeChartEl.addEventListener("click", (e) => {
         audio.play();
     }
 });
+
+const vocabularyListEl = $(".vocabulary_list");
+vocabularyListEl.addEventListener("click", (e) => {
+    const name = e.target.classList[0];
+
+    // console.log(name);
+    if (name === "vocabulary_item") {
+        const value = e.target.innerText;
+        fetch(
+            `https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=en&q=${value}`
+        );
+        console.log(e.target);
+        console.dir(e.target);
+        console.log(e.target.innerText);
+    }
+});
