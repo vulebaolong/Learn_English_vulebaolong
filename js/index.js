@@ -17,36 +17,30 @@ const vocabularyListEl = $(".vocabulary_list");
 vocabularyListEl.addEventListener("click", async (e) => {
     const name = e.target.classList[0];
 
-    // console.log(name);
-    // if (name === "vocabulary_item") {
-    //     const value = e.target.innerText;
-    //     fetch(
-    //         `https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=en&q=${value}`
-    //     );
-    //     console.log(e.target);
-    //     console.dir(e.target);
-    //     console.log(e.target.innerText);
-    // }
-
     if (name === "vocabulary_item") {
         const value = e.target.innerText;
-        // const msg = new SpeechSynthesisUtterance(`${value}`);
-        // window.speechSynthesis.speak(msg);
+        console.log(value);
         say(`${value}`);
     }
 });
 
+const textSpeakBtnEl = $(".text_speak_btn");
+textSpeakBtnEl.addEventListener("click", () => {
+    const textToSpeechEl = $("#textToSpeech");
+    const value = textToSpeechEl.value.trim();
+    if (value === "") return;
+    say(`${value}`);
+});
+
 function say(m) {
-    const msg = new SpeechSynthesisUtterance();
-    const voices = window.speechSynthesis.getVoices();
-    // msg.voice = voices[5];
+    var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
     msg.voice = voices[6];
     msg.voiceURI = "native";
     msg.volume = 1;
-    msg.rate = 1;
-    msg.pitch = 1;
+    msg.rate = 0.8;
+    msg.pitch = 0.8;
     msg.text = m;
     msg.lang = "en-UK";
     speechSynthesis.speak(msg);
 }
-say("zebra");

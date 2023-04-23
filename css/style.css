@@ -1,3 +1,6 @@
+section {
+    padding: 90px 0;
+}
 .phonemeChart img {
     cursor: pointer;
     width: 100%;
